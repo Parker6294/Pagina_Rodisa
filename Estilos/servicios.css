@@ -1,0 +1,380 @@
+ * {
+    margin: 0; /* Eliminar márgenes de todos los elementos */
+    padding: 0; /* Eliminar relleno de todos los elementos */
+    box-sizing: border-box; /* Para un mejor control del tamaño de los elementos */
+  }
+  
+  body {
+    min-height: 100vh;
+    background-color: white; /* Fondo blanco para toda la página */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+nav{
+    background-color: #004585;
+    box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.1);
+    position: relative; /* Asegúrate de que el menú tenga posición relativa */
+    z-index: 10; /* Z-index alto para que esté por encima */
+    margin-bottom: 0;
+    background-color: #004585;
+    box-shadow: none; /* Asegúrate de que no haya sombra */
+    position: fixed; /* Fijar el menú en la parte superior */
+    top: 0; /* Asegurarse de que esté en la parte superior */
+    left: 0; /* Alinear a la izquierda */
+    width: 100%; /* Ancho completo */
+    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */  
+  }
+  nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  nav li{
+    height: 50px;
+  }
+  
+  nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+  }
+  
+  nav img{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+  }
+  nav a:hover{
+    background-color: #004585;
+  }
+  nav li:first-child{
+    margin-right: auto;
+  }
+  .sidebar{
+    position: fixed;
+    top: 0; 
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #00458544;
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .sidebar li{
+    width: 100%;
+  }
+  .sidebar a{
+    width: 100%;
+  }
+  .menu-button{
+    display: none;
+  }
+  
+  @media(max-width: 800px){
+    .hideOnMobile{
+      display: none;
+    }
+    .menu-button{
+      display: block;
+    }
+    .overlay h1 {
+      font-size: 2em;
+    }
+    .overlay h2 {
+      font-size: 1.5em;
+    }
+    .overlay .small-text {
+      font-size: 1em;
+    }
+  }
+  @media(max-width: 400px){
+    .sidebar{
+      width: 100%;
+    }
+  }
+
+
+  #services {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f9fa; /* Fondo claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 20px auto; /* Margen superior e inferior */
+    max-width: 1200px; /* Máxima anchura para un diseño centrado */
+}
+
+.service-buttons {
+    margin-bottom: 20px;
+}
+
+.service-buttons button {
+    background-color: #004585; /* Color de fondo */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 0 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.service-buttons button:hover {
+    background-color: #003366; /* Color al pasar el cursor */
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+.service-info {
+    margin-top: 20px;
+    display: flex; /* Usar flexbox para alinear la información y la imagen */
+    justify-content: space-between;
+    align-items: flex-start; /* Alinear elementos al inicio */
+    padding: 20px; /* Espaciado interno */
+    background-color: white; /* Fondo blanco para el contenido */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.info-container {
+    flex: 1; /* Deja que la información ocupe el espacio restante */
+    text-align: left; /* Alinear el texto a la izquierda */
+    padding-right: 20px; /* Espaciado a la derecha para separación */
+    margin-top: 20px; /* Aumenta el margen superior si es necesario */
+}
+
+.info-container p {
+    text-align: justify; /* Justificar el texto */
+    line-height: 1.6; /* Mejorar el espaciado entre líneas */
+    color: #333; /* Color del texto */
+}
+
+.service-info img {
+    max-width: 300px; /* Ajusta el tamaño máximo de la imagen */
+    height: auto;
+    display: none; /* Se mostrará al hacer clic en el botón */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para la imagen */
+}
+
+/* Consultas de medios para hacer el diseño responsivo */
+@media (max-width: 800px) {
+    .service-info {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar elementos */
+    }
+
+    .info-container {
+        padding-right: 0; /* Eliminar espaciado a la derecha */
+        text-align: center; /* Centrar texto en pantallas pequeñas */
+        margin-top: 0; /* Resetear margen superior */
+    }
+
+    .service-info img {
+        max-width: 100%; /* Hacer la imagen responsiva */
+        margin-top: 20px; /* Espaciado superior para la imagen */
+    }
+}
+
+@media (max-width: 400px) {
+    .service-buttons button {
+        padding: 10px 20px; /* Reducir tamaño de botón en pantallas pequeñas */
+        font-size: 0.9em; /* Ajustar tamaño de fuente */
+    }
+
+    #services {
+        padding: 30px 10px; /* Ajustar padding en pantallas pequeñas */
+    }
+}
+
+
+
+
+/* Footer */
+footer {
+    position: relative;
+    width: 100%;
+    background: #004585; /* Color de fondo */
+    min-height: 150px; /* Ajusta la altura si es necesario */
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px; /* Separación del footer */
+  }
+  
+  footer .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: left; /* Alineación a la izquierda */
+    margin-bottom: 15px; /* Espaciado inferior */
+  }
+  
+  footer .info p {
+    margin: 0 15px; /* Espaciado entre icono y texto */
+    font-size: 1em;
+  }
+  
+  footer .info i {
+    margin-right: 5px; /* Espaciado entre el icono y el texto */
+    font-size: 1.5em; /* Tamaño del icono */
+  }
+  
+  footer .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Espaciado inferior de los iconos */
+  }
+  
+  footer .icons i {
+    margin: 0 15px; /* Espaciado entre iconos */
+    font-size: 2em; /* Tamaño del icono */
+  }
+  
+  .info {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+  .info div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .info i {
+    font-size: 2em; /* Ajusta el tamaño del icono */
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
+  
+  footer .social_icons, footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+  
+  footer .social_icons li, footer .menu li {
+    list-style: none;
+  }
+  
+  footer .social_icons li a {
+    font-size: 2em;
+    color: white;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  
+  footer .social_icons li a:hover {
+    transform: translateY(-10px);
+  }
+  
+  footer .menu li a {
+    font-size: 1em;
+    color: white;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+  }
+  
+  footer .menu li a:hover {
+    opacity: 1;
+  }
+  
+  footer p {
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1em;
+  }
+  
+  footer p a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  footer p ion-icon {
+    color: red;
+    font-size: 1em;
+    display: inline-block;
+    margin-bottom: -2px;
+  }
+  
+  footer .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(../Iconos/wave.png);
+    background-size: 1000px 100px;
+  }
+  
+  footer .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+  }
+  
+  footer .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_02 4s linear infinite;
+  }
+  
+  footer .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWave 3s linear infinite;
+  }
+  
+  footer .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWave_02 3s linear infinite;
+  }
+  
+  @keyframes animateWave {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0;
+    }
+  }
+  
+  @keyframes animateWave_02 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+  }
